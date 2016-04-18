@@ -13,8 +13,9 @@ More info in my blog http://aironman2k.wordpress.com
 
 TODO
 
-	update build.sbt to use latest versions of dependencies
-
+	update build.sbt to use latest versions of dependencies. 
+	There is a problem with dependencies, i cannot upgrade spark and akka to latest versions
+	so i am going to update first spark dependencies and disable everything related with akka and play...	
 Setup
 =====
 

@@ -2,7 +2,7 @@ package controllers
 
 import model.AmazonRating._
 import model.{AmazonProduct, AmazonProductAndRating, AmazonRating}
-import org.apache.spark.SparkContext
+import org.apache.spark.{SparkConf,SparkContext}
 import play.api.mvc._
 import reactivemongo.api.MongoDriver
 import reactivemongo.api.collections.default.BSONCollection
@@ -24,7 +24,8 @@ object Application extends Controller {
 
   val RatingFile = "ratings.csv"
 
-  val sc = new SparkContext("local[4]", "recommender")
+  val conf = new SparkConf().setAppName(this.getClass.getSimpleName).setMaster("local[4]")
+  val sc = new SparkContext(conf)
   sc.addJar("target/scala-2.10/blog-spark-recommendation_2.10-1.0-SNAPSHOT.jar")
   val recommender = new Recommender(sc, RatingFile)
 
