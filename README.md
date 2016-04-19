@@ -16,6 +16,8 @@ TODO
 	update build.sbt to use latest versions of dependencies. 
 	There is a problem with dependencies, i cannot upgrade spark and akka to latest versions
 	so i am going to update first spark dependencies and disable everything related with akka and play...	
+	
+	Add movielensALS to project 
 Setup
 =====
 
