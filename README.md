@@ -33,11 +33,20 @@ Running the example
 ===================
 
     $ cd $YOUR_PROJECT_FOLDER
+    $:recomendation-spark-engine aironman$ sh download.sh 
+	Downloading reviews from https://snap.stanford.edu/data/web-FineFoods.html
+	--2016-04-19 14:22:10--  https://snap.stanford.edu/data/finefoods.txt.gz
+	Resolving snap.stanford.edu... 171.64.75.80
+	Connecting to snap.stanford.edu|171.64.75.80|:443... connected.
+	HTTP request sent, awaiting response... 200 OK
+	Length: 122104202 (116M) [application/x-gzip]
+	Saving to: ‘finefoods.txt.gz’
+
+	100%[==================================================================================================================================================================>] 122,104,202 4.43MB/s   in 31s    
+
+	2016-04-19 14:22:48 (3.71 MB/s) - ‘finefoods.txt.gz’ saved [122104202/122104202]
     $ sbt
     $ play package run
-
-
-
 	$ YOUR-SPARK-FOLDER/spark-1.6/bin/spark-submit --driver-memory 2g --class MovieLensALS target/scala-2.10/movielens-als_2.10-0.1.jar /FOLDER-MOVIES FOLDER/personalRatings.txt
 	Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 	16/04/19 13:56:25 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
