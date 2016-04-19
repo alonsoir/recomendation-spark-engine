@@ -32,6 +32,59 @@ Download the food review file (500K reviews) using the `download.sh` script.
 Running the example
 ===================
 
+	$:recomendation-spark-engine aironman$ sbt
+	[info] Loading project definition from /Users/aironman/my-blog-spark-food/recomendation-spark-engine/project
+	[info] Set current project to blog-spark-recommendation (in build file:/Users/aironman/my-blog-spark-food/recomendation-spark-engine/)
+	[blog-spark-recommendation] $ play
+	       _
+	 _ __ | | __ _ _  _
+	| '_ \| |/ _' | || |
+	|  __/|_|\____|\__ /
+	|_|            |__/
+
+	play 2.2.3 built with Scala 2.10.3 (running Java 1.8.0_74), http://www.playframework.com
+
+	> Type "help play" or "license" for more information.
+	> Type "exit" or use Ctrl+D to leave this console.
+
+	[blog-spark-recommendation] $ package
+	[info] Updating {file:/Users/aironman/my-blog-spark-food/recomendation-spark-engine/}recomendation-spark-engine...
+	[info] Resolving org.scala-lang#scalap;2.10.3 ...
+	[info] Done updating.
+	[info] Compiling 13 Scala sources and 1 Java source to /Users/aironman/my-blog-spark-food/recomendation-spark-engine/target/scala-2.10/classes...
+	[info] Packaging /Users/aironman/my-blog-spark-food/recomendation-spark-engine/target/scala-2.10/blog-spark-recommendation_2.10-1.0-SNAPSHOT.jar ...
+	[info] Done packaging.
+	[success] Total time: 13 s, completed 19-abr-2016 15:49:13
+	[blog-spark-recommendation] $ run
+
+	--- (Running the application from SBT, auto-reloading is enabled) ---
+
+	SLF4J: Class path contains multiple SLF4J bindings.
+	SLF4J: Found binding in [jar:file:/Users/aironman/.ivy2/cache/ch.qos.logback/logback-classic/jars/logback-classic-1.0.13.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+	SLF4J: Found binding in [jar:file:/Users/aironman/.ivy2/cache/org.slf4j/slf4j-log4j12/jars/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+	SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+	SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+	[info] play - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+	(Server started, use Ctrl+D to stop and go back to the console...)
+
+	[info] play - Application started (Dev)
+	Parsed ratings.csv. Kept 73279 ratings out of 568454
+	ALS Time: 87 seconds
+	Rating:AmazonRating(myself,B004CLCEDE,7.868514179378008)
+	Rating:AmazonRating(myself,B002TMV3GC,7.127248465242785)
+	Rating:AmazonRating(myself,B001GQ3E3M,7.036814730770442)
+	Rating:AmazonRating(myself,B00213EU7I,6.7155778369643935)
+	Rating:AmazonRating(myself,B00213IAUQ,6.7155778369643935)
+	Rating:AmazonRating(myself,B002AUCELQ,6.7155778369643935)
+	Rating:AmazonRating(myself,B00213ERI0,6.7155778369643935)
+	Rating:AmazonRating(myself,B002AU4V94,6.7155778369643935)
+	Rating:AmazonRating(myself,B002AU3K1E,6.7155778369643935)
+	Rating:AmazonRating(myself,B005DFL4PM,6.370396856136817)
+	
+
+	Running MovieLensALS.scala
+
     $ cd $YOUR_PROJECT_FOLDER
     $:recomendation-spark-engine aironman$ sh download.sh 
 	Downloading reviews from https://snap.stanford.edu/data/web-FineFoods.html
